@@ -36,8 +36,9 @@ def deltile(tile:Button):
 
 def drawTiles(pos:Vec3):
     if blockChange:
-        for tile in tiles:
-            if tile.tid > 0:
+        for i in len(tiles) - 1:
+            tile = tiles[i];
+            if tile.tid > 0 != tiles[i+1] > 0:
                 tile.enable();
             else:
                 tile.disable();
