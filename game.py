@@ -19,8 +19,8 @@ def input(key):
         case "3":blockid = 3;
         case "4":blockid = 4;
     tile = mouse.hovered_entity;
-    if tile != None and distance(tile, player) < 8:
-        if key == "left mouse down":
+    if distance(tile, player) < 8 and tile != None:
+        if key == "left mouse down" and tile != None:
             Audio("shoot.wav");
             p = tile.position+mouse.normal;
             match blockid:
@@ -34,7 +34,7 @@ def input(key):
                     if gold != 0:
                         render(p, 8);
                         gold -= 1;
-        if key == "right mouse down":
+        if key == "right mouse down" and tile != None:
                 if tile in tiles:
                     match tile.id:
                         case 3:
