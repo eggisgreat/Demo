@@ -39,4 +39,4 @@ def generate():
     makeores(2, 3, 3, "diamond",True);
     blockid = 2;
 
-def spawn():player.position_setter(5, 20, 5);
+def spawn():player.position_setter((5, 20, 5));
