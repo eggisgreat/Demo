@@ -1,3 +1,3 @@
 # Demo
-A block game\n
+A block game  
 Danger!  Very buggy and will crash easily
