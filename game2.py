@@ -8,8 +8,10 @@ tiles = [];
 blockChange = False;
 Button.default_color = color.white;
 Button.default_model = "cube";
+player.scale_y = 0.7
 
 def render(pos:Vec3, tid:int=0):
+    global blockChange
     tuv = blockUV(tid);
     if tuv[1]:
         temp = Button(position=pos,parent=scene,color=color.rgb32(*tuv[0]));
