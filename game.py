@@ -19,33 +19,36 @@ def input(key):
         case "3":blockid = 3;
         case "4":blockid = 4;
     tile = mouse.hovered_entity;
-    if distance(tile, player) < 8 and tile != None:
-        if key == "left mouse down" and tile != None:
-            Audio("shoot.wav");
-            p = tile.position+mouse.normal;
-            match blockid:
-                case 1:render(p, 2);
-                case 2:render(p, 1);
-                case 3:
-                    if iron != 0:
-                        render(p, 5);
-                        iron -= 1;
-                case 4:
-                    if gold != 0:
-                        render(p, 8);
-                        gold -= 1;
-        if key == "right mouse down" and tile != None:
+    try:
+        if distance(tile, player) < 8:
+            if key == "left mouse down":
+                Audio("shoot.wav");
+                p = tile.position+mouse.normal;
+                match blockid:
+                    case 1:render(p, 2);
+                    case 2:render(p, 1);
+                    case 3:
+                        if iron != 0:
+                            render(p, 5);
+                            iron -= 1;
+                    case 4:
+                        if gold != 0:
+                            render(p, 8);
+                            gold -= 1;
+            if key == "right mouse down":
                 if tile in tiles:
                     match tile.id:
                         case 3:
                             points += 50;
                             gold += 1;
                         case 4:iron += 1;
-                Audio("shoot.wav");
-                if tile in tiles:deltile(tile);
-                text1.text = f"Points:{points}";
-                text2.text = f"Iron:{iron}";
-                text3.text = f"Gold:{gold}";
+                    deltile(tile);
+                    Audio("shoot.wav");
+                    text1.text = f"Points:{points}";
+                    text2.text = f"Iron:{iron}";
+                    text3.text = f"Gold:{gold}";
+    except:
+        pass;
             
     if key=="r":spawn();
     if key=="g":
