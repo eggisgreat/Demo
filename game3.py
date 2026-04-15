@@ -38,3 +38,5 @@ def generate():
     makeores(5, 10, 5, "gold");
     makeores(2, 3, 3, "diamond",True);
     blockid = 2;
+
+def spawn():player.position_setter(5, 20, 5);

@@ -1,7 +1,7 @@
 from game2 import *
 from game3 import *
 
-player.position_setter((5, 20, 5));
+spawn();
 iron = 0;
 points = 0;
 gold = 0;
@@ -47,7 +47,7 @@ def input(key):
                 text2.text = f"Iron:{iron}";
                 text3.text = f"Gold:{gold}";
             
-    if key=="r":player.position_setter((5, 20, 5));
+    if key=="r":spawn();
     if key=="g":
         if points - 1000 >= 0:
             generate();
