@@ -8,7 +8,8 @@ tiles = [];
 blockChange = False;
 Button.default_color = color.white;
 Button.default_model = "cube";
-player.scale_y = 0.7
+player.scale_y = 0.9
+player.jump_height = 1.5;
 
 def render(pos:Vec3, tid:int=0):
     global blockChange

@@ -19,7 +19,7 @@ def input(key):
         case "3":blockid = 3;
         case "4":blockid = 4;
     tile = mouse.hovered_entity;
-    if tile != None:
+    if tile != None and distance(tile, player) < 8:
         if key == "left mouse down":
             Audio("shoot.wav");
             p = tile.position+mouse.normal;
