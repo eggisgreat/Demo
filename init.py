@@ -1,5 +1,6 @@
 from ursina import *
 from ursina.prefabs.first_person_controller import FirstPersonController
+from random import *
 app = Ursina(title="Game",fullscreen=True);
 player = FirstPersonController();
 Sky();

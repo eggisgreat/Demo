@@ -3,10 +3,10 @@ from game2 import *
 blockid = 2;
 
 def makeores(cl:int,ch:int,r:int,ore:str,s:bool=False):
-    for i in range(random.randint(cl, ch)):
-        x = random.randint(0,8);
-        y = random.randint(0,r);
-        z = random.randint(0,8);
+    for i in range(randint(cl, ch)):
+        x = randint(0,8);
+        y = randint(0,r);
+        z = randint(0,8);
         tid = 0;
         match ore:
             case "rock":tid = 1;
@@ -22,10 +22,14 @@ def makeores(cl:int,ch:int,r:int,ore:str,s:bool=False):
             render((x+1,y,z+1),tid);
 
 def tree():
-    x = random.randint(1, 8);
-    z = random.randint(1, 8);
-    for i in 5:
-        render((x,9+i,z),9)
+    x = randint(1, 8);
+    z = randint(1, 8);
+    for i in range(4):
+        render((x,10+i,z),9)
+    render((x,13,z),2)
+    for i in range(3):
+        for j in range(3):
+            render((x-1+i,12,z-1+j),2);
 
 def generate():
     global points, blockid, iron, text1
@@ -43,6 +47,8 @@ def generate():
     makeores(10, 20, 7,"iron");
     makeores(5, 10, 5, "gold");
     makeores(2, 5, 3, "diamond",True);
+    for i in range(randint(2,3)):
+        tree();
     blockid = 2;
 
 def spawn():player.position_setter((5, 20, 5));
