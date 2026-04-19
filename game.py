@@ -1,5 +1,5 @@
 from game2 import *
-from game3 import *
+from alt import *
 
 spawn();
 iron = 0;
@@ -28,20 +28,15 @@ def input(key):
                     case 1:render(p, 2);
                     case 2:render(p, 1);
                     case 3:
-                        if iron != 0:
-                            render(p, 5);
-                            iron -= 1;
+                        if iron != 0:render(p, 5);iron -= 1;
                     case 4:
-                        if gold != 0:
-                            render(p, 8);
-                            gold -= 1;
+                        if gold != 0:render(p, 8);gold -= 1;
             if key == "right mouse down":
                 if tile in tiles:
                     match tile.id:
-                        case 3:
-                            points += 50;
-                            gold += 1;
+                        case 3:points += 50;gold += 1;
                         case 4:iron += 1;
+                        case 6:points += 100;
                     deltile(tile);
                     Audio("shoot.wav");
                     text1.text = f"Points:{points}";

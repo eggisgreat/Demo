@@ -1,23 +1,10 @@
-from ursina import *
-from ursina.prefabs.first_person_controller import FirstPersonController
-from game4 import *
-app = Ursina(title="Game",fullscreen=True);
-player = FirstPersonController();
-Sky();
-tiles = [];
-blockChange = False;
-Button.default_color = color.white;
-Button.default_model = "cube";
-player.scale_y = 0.9
-player.jump_height = 1.5;
+from init import *
 
 def render(pos:Vec3, tid:int=0):
     global blockChange
     tuv = blockUV(tid);
-    if tuv[1]:
-        temp = Button(position=pos,parent=scene,color=color.rgb32(*tuv[0]));
-    else:
-        temp = Button(texture=f"atlas.png",position=pos,parent=scene,texture_scale=(-0.25,-0.5),texture_offset=tuv[0]);
+    if tuv[1]:temp = Button(position=pos,parent=scene,color=color.rgb32(*tuv[0]));
+    else:temp = Button(texture=f"atlas.png",position=pos,parent=scene,texture_scale=(-0.25,-0.5),texture_offset=tuv[0]);
     temp.id = tid;
     for tile in tiles:
         if tile.position == temp.position:
