@@ -47,7 +47,7 @@ def generate():
     makeores(10, 20, 7,"iron");
     makeores(5, 10, 5, "gold");
     makeores(2, 5, 3, "diamond",True);
-    for i in range(randint(2,3)):tree();
+    for i in range(3):tree();
     blockid = 2;
 
 def spawn():player.position_setter((5, 20, 5));
