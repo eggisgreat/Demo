@@ -8,7 +8,7 @@ tiles = [];
 blockChange = False;
 Button.default_color = color.white;
 Button.default_model = "cube";
-player.scale_y = 0.89
+player.scale_y = 0.85
 player.jump_height = 1.5;
 
 def uv(x, y):

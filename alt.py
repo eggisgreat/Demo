@@ -22,8 +22,8 @@ def makeores(cl:int,ch:int,r:int,ore:str,s:bool=False):
             render((x+1,y,z+1),tid);
 
 def tree():
-    x = round(randint(1, 8)/2);
-    z = round(randint(1, 8)/2);
+    x = randint(1, 8);
+    z = randint(1, 8);
     for i in range(4):
         render((x,10+i,z),9)
     render((x,13,z),2)
