@@ -44,12 +44,7 @@ def input(key):
                     text3.text = f"Gold:{gold}";
     except:
         pass;
-            
     if key=="r":spawn();
-    if key=="g":
-        if points - 1000 >= 0:
-            generate();
-            points -= 1000;
     if key=="escape":print("\033[2J\033[H");quit();
 
 app.run();
