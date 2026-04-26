@@ -17,9 +17,10 @@ def makeores(cl:int,ch:int,r:int,ore:str,s:bool=False):
             case "copper":tid = 7;
         render((x,y,z),tid);
         if not s:
-            render((x+1,y,z),tid);
-            render((x,y,z+1),tid);
-            render((x+1,y,z+1),tid);
+            for i in range(randint(0,4)):
+                if randint(0,1)==1:x+=1
+                else:z+=1;
+                render((x,y,z),tid);
 
 def tree():
     x = randint(1, 8);
